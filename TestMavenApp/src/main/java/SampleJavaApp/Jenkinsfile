@@ -1,0 +1,20 @@
+pipeline{
+agent any
+stages
+{
+stage("SCM Checkout")
+{
+steps
+{
+git 'https://github.com/ArunachalamAlagappan/JavaMavenJenkinsRepo.git'
+}
+}
+stage("Code compilation")
+{
+steps
+{
+sh 'mvn package'
+}
+}
+}
+}
